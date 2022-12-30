@@ -4,6 +4,12 @@
     <div>
       <p>{{ val }} Random Number = {{ count }} times</p>
       <button @click="val = Math.random(0, 100)">Click to Change</button>
+      <!-- <form @submit.prevent="submitForm()">
+        <input type="text"/>
+        <button>
+          Submit Form
+        </button>
+      </form> -->
     </div>
 
 </template>
@@ -16,7 +22,7 @@ export default {
   // },
   setup() {
     const val = ref('Hello!')
-    
+    // const val = 'hello'
     const type = ref('hello developers')
     const root = ref(null)
     const count = ref(0)
@@ -43,7 +49,9 @@ export default {
     onUnmounted(() => {
       console.log('unmounted')
     })
-
+    // const submitForm = () => {
+    //   alert("submitted");
+    // }
     return {
       val, root, count
     }
