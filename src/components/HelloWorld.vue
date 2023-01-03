@@ -1,35 +1,15 @@
-<!-- <template>
-  
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p> 
-</template> -->
-
 <template>
   <div ref="greeting">Hello vue Developers !</div>
   <span>comment/uncomment me to see beforeUpdate/updated hook's reactivity</span>
     <div>
       <p>{{ val }} Random Number = {{ count }} times</p>
+      <!-- Inline handlers -->
       <button @click="val = Math.random(0, 100)">Click to Change</button>
+      
+      <!-- Method Handlers -->
+      <!-- <button @click="calculate()">Click Me</button> -->
+
+      <button @click="greet()">Greet</button>
     </div>
 
 </template>
@@ -53,6 +33,16 @@ export default {
     const someMethod = () => {
       // do smth
     }
+
+    //  Method Handlers 
+    const greet = () => {
+       alert(`Gretting!`)
+  }
+
+    // const calculate = () => {
+    //   return Math.random(); 
+    // }
+
     onBeforeMount(() => {
       console.log(type.value)
     })
@@ -77,7 +67,7 @@ export default {
     })
 
     return {
-      val, root, count
+      val, root, count, greet
     }
   },
 }
